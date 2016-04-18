@@ -1,9 +1,9 @@
 FROM alpine:edge
 MAINTAINER wsielski@eaby.com
 
-ENV CONSUL_VERSION v0.6.0
-ENV NOMAD_VERSION v0.2.1
-ENV FABIO_VERSION v1.0.6
+ENV CONSUL_VERSION v0.6.4
+ENV NOMAD_VERSION v0.3.1
+ENV FABIO_VERSION v1.0.9
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
   apk update; apk upgrade && \
@@ -18,7 +18,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
   apk del make git go gcc musl-dev openssl-dev && \
   rm -rf /var/cache/apk/*
 
-RUN curl -L https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip -o ui.zip && \
+RUN curl -L https://dl.bintray.com/mitchellh/consul/0.6.4_web_ui.zip -o ui.zip && \
   unzip ui.zip && \
   rm /ui.zip
 
